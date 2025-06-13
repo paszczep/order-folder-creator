@@ -62,8 +62,8 @@ class Files(Iterable[PurePosixPath]):
         """Wymień elementy wewnątrz źródła."""
         return self.remote.list(rel_path=str(self._source))
     
-    @classmethod
     @_svn_safe
+    @classmethod
     def download(cls, remote_path: PurePosixPath) -> bytes:
         """Pobierz wskazany element z repozytorium."""
         return cls.remote.cat(str(remote_path))
