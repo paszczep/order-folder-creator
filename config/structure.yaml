@@ -1,0 +1,111 @@
+PROTECTIONS:
+    Formal Documentation:
+        Order:
+        Offer:
+        Contract:
+        Shipping Documentation:
+        Warranty:
+        Invoice:
+        Participant List and Certificates:
+    Technical Documentation:
+        Field Controller Configuration:
+        Detailed Design:
+            Settings:
+            Telemechanics Signal List:
+            Detailed Design from Designer:
+        Factory Protocols:
+            Controllers:
+            Indicators:
+        O&M Manuals:
+            Controllers: SPAM
+            Indicators: EGGS
+
+
+CIRCUIT BREAKERS:
+    Formal Documentation:
+        Order:
+        Offer:
+        Contract:
+        Shipping Documentation:
+        Warranty:
+        Invoice:
+        Participant List and Certificates:
+    Technical Documentation:
+        Detailed Design:
+        Factory Protocols:
+            Circuit Breaker:
+        O&M Manuals:
+            Circuit Breaker:
+        Shipping Specification:
+
+OTHER:
+    Formal Documentation:
+        Shipping Documentation:
+        Invoice:
+        Warranty:
+        Cost Estimate:
+            External Offers:
+        Participant List and Certificates:
+        Offer:
+        Project Summary:
+        Project Acceptance Protocols:
+        Contract:
+        Formal Arrangements:
+        Order:
+
+    Technical Documentation:
+        Technical Tender Documentation:
+        O&M Manuals:
+            NALF Disconnector Installation and Operation Manual:
+            Switchgears:
+            Controllers: SPAM
+            Earthing Switch:
+            Indicators: EGGS
+            Circuit Breaker:
+        Shipping Documentation:
+            Photos:
+        LV Door Elevations:
+            LV Doors:
+            LV Door Perforation:
+            Switchgear Visualization:
+        Schedules:
+        Field Controller Configuration:
+        3D Models:
+        Production Summary:
+            Deviations:
+            Warehouse Returns:
+        As-Built Documentation:
+            Post-Assembly Project from Production:
+            As-Built Project from Site:
+            As-Built Project from Production:
+        Detailed Design:
+            Telemechanics Signal List:
+            Settings:
+            Detailed Design from Designer:
+                Obsolete:
+        Factory Protocols:
+            Import Documents:
+            Surge Arresters:
+            Other Documents:
+            Voltage Transformers:
+            Current Transformers:
+            Earth Fault Current Transformers:
+            Switchgears:
+            Disconnector:
+            Controllers:
+            Earthing Switch:
+            Indicators:
+            Circuit Breaker:
+            Disconnect Set:
+        Frames:
+        Busbar Cutouts:
+        Production Specifications:
+        Nameplates, Description Labels:
+            Engraved Labels:
+            Adhesive Labels:
+        Technical Arrangements:
+        Site Visits:
+        Photos:
+            From Site:
+            From Production:
+            From Inspection:

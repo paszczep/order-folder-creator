@@ -1,0 +1,9 @@
+Dokumentacja formalna:
+  "ADD ALLOWED FULL": [Admin]
+  "ADD ALLOWED CHANGE": [AB, CD]
+
+
+Dokumentacja techniczna:
+  "ADD ALLOWED FULL": [Admin]
+  "ADD ALLOWED CHANGE": [AB, CD, EF]
+  "ADD ALLOWED READ": [GH]

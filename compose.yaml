@@ -1,0 +1,22 @@
+
+services:
+  app:
+    restart: unless-stopped
+    image: folder-creator
+    container_name: folder-creator
+    build:
+      context: .
+    volumes:
+      - projects_volume:${fileserver_mount}
+    env_file:
+      - .env
+    environment:
+      - APP_MODE=${APP_MODE:-prod}
+
+volumes:
+  projects_volume:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: username=${fileserver_user},password=${fileserver_password}
+      device: ${fileserver_url}/${fileserver_folder}
