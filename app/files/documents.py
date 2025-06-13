@@ -51,7 +51,7 @@ class Documents:
             file_path.write_bytes(file_data)
             count += 1
             
-        info(f'files saved: {count}.')
+        info(f'Zapisano {count} plik(i).')
             
     def __post_init__(self):
         """Utwórz nieistniejący folder produktu, zapisz jego pliki."""
