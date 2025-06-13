@@ -29,8 +29,8 @@ class _Structure:
         if ProjectFolder.is_project_folder(project_path):
             rmtree(project_path)
     
-    @staticmethod
     @directory_safe
+    @staticmethod
     def crate_directory(path: Path):
         """Utwórz foldery projektu, wraz z nadrzędnymi."""
         path.mkdir(parents=True, exist_ok=True)
