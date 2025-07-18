@@ -1,15 +1,12 @@
-select
-    projekty.rok::text as "year",
-    TRIM(grupy.opis) as "group",
-    TRIM(projekty.nr_wlasny) as "number",
-    TRIM(projekty.opis) as "partner"
-from
-    g.mzk_projekty as projekty
-    join g.mzk_pojekty_grupy as grupy on grupy.id = projekty.id_grupy1
-where
-    projekty.nr_wlasny like '510-%'
-    and TRIM(grupy.opis) IN (:project_groups)
-    and datasql(projekty.id_data) > :since_date::date
-;
-
-
+SELECT
+    projects.year::text AS "year",
+    TRIM(groups.description) AS "group",
+    TRIM(projects.own_number) AS "number",
+    TRIM(projects.description) AS "partner"
+FROM
+    g.projects AS projects
+    JOIN g.project_groups AS groups ON groups.id = projects.group_id
+WHERE
+    projects.own_number LIKE '510-%'
+    AND TRIM(groups.description) IN (:project_groups)
+    AND datasql(projects.date_id) > :since_date::date;

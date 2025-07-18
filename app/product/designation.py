@@ -12,7 +12,7 @@ class Label(StrEnum):
     
     @staticmethod
     def product_prefix() -> str:
-        return "e2"
+        return "abc"
 
     @property
     def with_prefix(self) -> str:

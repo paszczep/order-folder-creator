@@ -1,37 +1,37 @@
 WITH projects_products AS (
 
   SELECT 
-    TRIM(projekty.nr_wlasny) AS "project_number",
-    TRIM(REGEXP_REPLACE(indeksy.nazwa_indeksu, '^:product_prefix', '')) AS "product_symbol"
+    TRIM(projects.own_number) AS "project_number",
+    TRIM(REGEXP_REPLACE(indexes.index_name, '^:product_prefix', '')) AS "product_symbol"
 
   FROM 
-    g.mzk_zamow_klienta as zamowienia
-  left join
-    g.mzk_zamow_klienta_pozycje as pozycje
-      on zamowienia.rok = pozycje.rok_zamowienia 
-      and zamowienia.nr = pozycje.nr_zamowienia
-  left join
-    g.gm_indeksy as indeksy
-      on indeksy.id_indeksu = pozycje.id_materialu
-  left join
-    g.mzk_projekty_zwiazki as zwiazki
-      on zwiazki.rodzaj_zrodla = 3
-      and zwiazki.id_zrodla1 = zamowienia.rok
-      and zwiazki.id_zrodla2 = zamowienia.nr
-  left join 
-    g.mzk_projekty as projekty 
-      on projekty.nr = zwiazki.nr_projektu 
-      and projekty.rok = zwiazki.rok_projektu
+    erp.client_orders AS orders
+  LEFT JOIN
+    erp.client_order_items AS items
+      ON orders.year = items.order_year 
+      AND orders.number = items.order_number
+  LEFT JOIN
+    erp.indexes AS indexes
+      ON indexes.id = items.material_id
+  LEFT JOIN
+    erp.project_links AS links
+      ON links.source_type = 3
+      AND links.source_id1 = orders.year
+      AND links.source_id2 = orders.number
+  LEFT JOIN 
+    erp.projects AS projects 
+      ON projects.number = links.project_number 
+      AND projects.year = links.project_year
 
   WHERE
-    TRIM(projekty.nr_wlasny) in (:project_numbers)
-  and
-    exists (
+    TRIM(projects.own_number) IN (:project_numbers)
+  AND
+    EXISTS (
       SELECT 1
-      FROM unnest(array[:product_labels]) AS pattern
-      WHERE TRIM(indeksy.nazwa_indeksu) ILIKE pattern)
-  and
-    indeksy.nazwa_indeksu NOT SIMILAR TO '% [[:lower:]]{5,}%'
+      FROM UNNEST(ARRAY[:product_labels]) AS pattern
+      WHERE TRIM(indexes.index_name) ILIKE pattern)
+  AND
+    indexes.index_name NOT SIMILAR TO '% [[:lower:]]{5,}%'
 )
 
 SELECT 
@@ -40,5 +40,4 @@ SELECT
 FROM 
   projects_products 
 GROUP BY 
-  project_number
-;
+  project_number;
