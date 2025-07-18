@@ -7,6 +7,6 @@ FROM
     g.projects AS projects
     JOIN g.project_groups AS groups ON groups.id = projects.group_id
 WHERE
-    projects.own_number LIKE '510-%'
+    projects.own_number LIKE 'spam-%'
     AND TRIM(groups.description) IN (:project_groups)
     AND datasql(projects.date_id) > :since_date::date;

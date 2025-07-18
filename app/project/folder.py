@@ -29,7 +29,7 @@ class ProjectFolder:
     @staticmethod
     def is_project_folder(path: Path) -> bool:
         """Czy wskazana lokalizacja to folder projektu?"""
-        return path.is_dir() and path.name.startswith('510-')
+        return path.is_dir() and path.name.startswith('spam-')
 
     def __repr__(self) -> str:
         return f'Project - {self.group} - {self.number}'
